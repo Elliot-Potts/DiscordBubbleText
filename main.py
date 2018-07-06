@@ -35,7 +35,7 @@ def runOnStart():
                                                                         """)
     print("""Discord Bubble Text Generator:
     - Copy the text you want to bubblify.
-    - Press your hotkey (C:\Potts' Software\DiscordBubbles\settings.ini
+    - Press your hotkey (C:\Potts' Software\DiscordBubbles\settings.ini)
     - Paste in Discord to show bubbles.
     [!] Your hotkey can be changed, and is default to CTRL+S+R""")
 
