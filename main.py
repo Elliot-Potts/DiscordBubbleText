@@ -63,7 +63,7 @@ settingsInit()
 def run():
     string = pyperclip.paste()
 
-    print(("\n"*3) + " [+] Converting {} to bubble-text.".format(string))
+    print(("\n"*1) + " [+] Converting {} to bubble-text.".format(string))
 
     alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
                 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
@@ -75,6 +75,10 @@ def run():
     for item in string:
         if item in alphabet:
             newString = newString + " " + ":regional_indicator_{}:".format(item)
+        elif item == "?":
+            newString = newString + " " + ":question:"
+        elif item == "!":
+            newString = newString + " " + ":exclamation:"
         elif item == " ":
             newString = newString + "   "
         else:
