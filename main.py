@@ -63,7 +63,7 @@ settingsInit()
 def run():
     string = pyperclip.paste()
 
-    print(("\n"*1) + " [+] Converting {} to bubble-text.".format(string))
+    print(("\n"*1) + " [+] Converting '{}' to bubble-text.".format(string))
 
     alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
                 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
