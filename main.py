@@ -61,7 +61,7 @@ settingsInit()
 
 
 def run():
-    string = pyperclip.paste()
+    string = pyperclip.paste().lower()
 
     print(("\n"*1) + " [+] Converting '{}' to bubble-text.".format(string))
 
@@ -85,7 +85,7 @@ def run():
         else:
             pass
 
-    print("DEBUGGING: newString = {}".format(str(newString)))
+    # print("DEBUGGING: newString = {}".format(str(newString)))
     pyperclip.copy(newString)
 
 
