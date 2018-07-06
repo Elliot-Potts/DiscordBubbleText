@@ -25,6 +25,14 @@ keyToUse = None
 
 
 def runOnStart():
+    print(r"""
+  ____  _                       _   ____        _     _     _           
+ |  _ \(_)___  ___ ___  _ __ __| | | __ ) _   _| |__ | |__ | | ___  ___ 
+ | | | | / __|/ __/ _ \| '__/ _` | |  _ \| | | | '_ \| '_ \| |/ _ \/ __|
+ | |_| | \__ \ (_| (_) | | | (_| | | |_) | |_| | |_) | |_) | |  __/\__ \
+ |____/|_|___/\___\___/|_|  \__,_| |____/ \__,_|_.__/|_.__/|_|\___||___/
+                                                 written by Elliot Potts                                                        
+                                                                        """)
     print("""Discord Bubble Text Generator:
     - Copy the text you want to bubblify.
     - Press your hotkey (C:\Potts' Software\DiscordBubbles\settings.ini
