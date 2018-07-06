@@ -6,7 +6,7 @@ Discord Bubble Text Generator
 
 
 Pretty sure something like this has already been achieved, I just thought I'd try and make it using Python.
-I might add a GUI later, but for now - this is a CLI.
+I might add a GUI later, but for now - this is a CLI program.
 
 
 Symbol text = :regional_indicator_THE-LETTER:
@@ -73,6 +73,7 @@ def run():
     newString = ""
 
     for item in string:
+        # print("ITEM = {}".format(item))
         if item in alphabet:
             newString = newString + " " + ":regional_indicator_{}:".format(item)
         elif item == "?":
@@ -84,6 +85,7 @@ def run():
         else:
             pass
 
+    print("DEBUGGING: newString = {}".format(str(newString)))
     pyperclip.copy(newString)
 
 
