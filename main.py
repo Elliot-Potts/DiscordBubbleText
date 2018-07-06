@@ -14,24 +14,62 @@ Symbol text = :regional_indicator_THE-LETTER:
 
 
 import time
+import keyboard
 import pyperclip
+import configparser
+import os
+
+projPath = "C:\Potts' Software\DiscordBubbles"
+configp = configparser.ConfigParser()
+keyToUse = None
 
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-            'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-            'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-            'y', 'z']
+def settingsInit():
+    if os.path.isdir(projPath):
+        os.chdir(projPath)
 
-string = pyperclip.paste()
+        if os.path.isfile("settings.ini"):
+            confO = configp.read("settings.ini")
+            global keyToUse
+            keyToUse = configp.get("main", "hotkey")
+        else:
+            getHotKey = "ctrl+s+r"
+            makeConf = open("settings.ini", "w")
+            configp.add_section("main")
+            configp.set("main", "hotkey", getHotKey)
+            configp.write(makeConf)
+            makeConf.close()
 
-newString = ""
-
-for item in string:
-    if item in alphabet:
-        newString = newString + " " + ":regional_indicator_{}:".format(item)
-    elif item == " ":
-        newString = newString + "   "
+            settingsInit()
     else:
-        pass
+        os.makedirs(projPath)
+        settingsInit()
 
-pyperclip.copy(newString)
+
+settingsInit()
+
+
+def run():
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+                'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+                'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+                'y', 'z']
+
+    string = pyperclip.paste()
+
+    newString = ""
+
+    for item in string:
+        if item in alphabet:
+            newString = newString + " " + ":regional_indicator_{}:".format(item)
+        elif item == " ":
+            newString = newString + "   "
+        else:
+            pass
+
+    pyperclip.copy(newString)
+
+
+keyboard.add_hotkey(keyToUse, run)
+
+keyboard.wait()
