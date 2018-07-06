@@ -24,6 +24,17 @@ configp = configparser.ConfigParser()
 keyToUse = None
 
 
+def runOnStart():
+    print("""Discord Bubble Text Generator:
+    - Copy the text you want to bubblify.
+    - Press your hotkey (C:\Potts' Software\DiscordBubbles\settings.ini
+    - Paste in Discord to show bubbles.
+    [!] Your hotkey can be changed, and is default to CTRL+S+R""")
+
+
+runOnStart()
+
+
 def settingsInit():
     if os.path.isdir(projPath):
         os.chdir(projPath)
@@ -50,12 +61,14 @@ settingsInit()
 
 
 def run():
+    string = pyperclip.paste()
+
+    print(("\n"*3) + " [+] Converting {} to bubble-text.".format(string))
+
     alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
                 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
                 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
                 'y', 'z']
-
-    string = pyperclip.paste()
 
     newString = ""
 
@@ -69,6 +82,8 @@ def run():
 
     pyperclip.copy(newString)
 
+
+print(" [+] Your hotkey is {}.".format(keyToUse))
 
 keyboard.add_hotkey(keyToUse, run)
 
