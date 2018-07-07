@@ -78,6 +78,19 @@ def run():
                 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
                 'y', 'z']
 
+    numbers = {
+        '1': ':one:',
+        '2': ':two:',
+        '3': ':three:',
+        '4': ':four:',
+        '5': ':five:',
+        '6': ':six:',
+        '7': ':seven:',
+        '8': ':eight:',
+        '9': ':nine:',
+        '10': ':keycap_ten:'
+    }
+
     newString = ""
 
     for item in string:
@@ -88,6 +101,8 @@ def run():
             newString = newString + " " + ":question:"
         elif item == "!":
             newString = newString + " " + ":exclamation:"
+        elif item in numbers.keys():
+            newString = newString + " " + numbers[item]
         elif item == " ":
             newString = newString + "   "
         else:
