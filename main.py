@@ -35,9 +35,10 @@ def runOnStart():
                                                                         """)
     print("""Discord Bubble Text Generator:
     - Copy the text you want to bubblify.
-    - Press your hotkey (C:\Potts' Software\DiscordBubbles\settings.ini)
+    - Press your hotkey
     - Paste in Discord to show bubbles.
-    [!] Your hotkey can be changed, and is default to CTRL+S+R""")
+    [!] Your hotkey can be changed at C:\Potts' Software\DiscordBubbles\settings.ini
+        DEFAULT: CTRL+S+R""")
 
 
 runOnStart()
@@ -79,6 +80,7 @@ def run():
                 'y', 'z']
 
     numbers = {
+        '0': ':zero:',
         '1': ':one:',
         '2': ':two:',
         '3': ':three:',
